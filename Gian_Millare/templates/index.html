@@ -2,36 +2,155 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hearty McWall-E</title>
-
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Linking bootstrap -->
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Hearty McWall-E</title>
+        
+        <!-- Importing Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Optional links -->
-
+        <!-- Importing other links -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-        <!-- Linking CSS File -->
-        <link href="style.css" rel="stylesheet">
+        <!-- Importing link to CSS file -->
+        <link href="../static/style.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     </head>
 
-    <!-- Beginning the body -->
-
     <body>
-        <header class="header">
-            <nav class="navbar navbar-style">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a href="index.html"><img class="logo" src="images/heartbeat.png"></a>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">Hearty McWall-E</label>
+            <ul>
+                <li><a class="active" href="######">Home</a></li>
+                <li><a href="######">Model 1</a></li>
+                <li><a href="######">Model 2</a></li>
+                <li><a href="######">Model 3</a></li>
+                <li><a href="######">About Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="jumbotron jumbotron-fluid" style="background: #aaa;">
+            <div class="container">
+                <h1>Welcome! My name is Hearty McWall-E.</h1>
+                <h1>But you can call me Buddy <i class="far fa-grin-beam"></i></h1>
+                <br>
+                <h3>Select a model and we'll see your potential health risk!</h3>
+            </div>
+        </div>
+
+        <!-- Start the Cards -->
+
+        <div class ="container padding">
+            <div class="row padding">
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../images/stickfigure.png">
+                        <div class="card-body">
+                            <h4 class="card-title">Model 1</h4>
+                            <p class="card-text">Deep Learning Neural Network</p>
+                            <a href="model-1-link" class="btn btn-outline-secondary">Try Me!</a>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </header>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../images/stickfigure.png">
+                        <div class="card-body">
+                            <h4 class="card-title">Model 2</h4>
+                            <p class="card-text">Random Forest</p>
+                            <a href="model-2-link" class="btn btn-outline-secondary">Try Me!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../images/stickfigure.png">
+                        <div class="card-body">
+                            <h4 class="card-title">Model 3</h4>
+                            <p class="card-text">Logistic Regression with GridSearch</p>
+                            <a href="model-3-link" class="btn btn-outline-secondary">Try Me!</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Another jumbotron -->
+
+        <div class="container-fluid padding" style="background: #aaa;">
+            <div class="row padding">
+
+                <div class="col-lg-6">
+                    <h1>Curious about who I am?</h1>
+                    <br>
+                    <p>I was created by genius students of the UC Berkeley Data Analytics Bootcamp. My sole purpose
+                    is to help you find out if you are at any health risks. My creators tested multiple machine learning 
+                    algorithms and models in order to find the most accurate models to help you. Choose any one of my three
+                    programmed models, input your answers, and find out if you're ready for that trip to the buffet
+                    <i class="far fa-grimace"></i>... or a trip to the doctors <i class="far fa-grin-beam-sweat"></i>
+                    </p>
+                    <a href="####"><button type="button" class="btn btn-primary btn-lg">About Us</button></a>
+                </div>
+
+                <div class="col-lg-6">
+                    <img src="../images/robot.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio  -->
+
+        <div class ="container padding">
+            <div class="row padding">
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../images/stickfigure.png">
+                        <div class="card-body">
+                            <h4 class="card-title">Gian Millare</h4>
+                            <p class="card-text">Machine Learning Engineer</p>
+                            <a href="model-1-link" class="btn btn-outline-secondary">Try Me!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../images/stickfigure.png">
+                        <div class="card-body">
+                            <h4 class="card-title">Nelson Tsai</h4>
+                            <p class="card-text">Product Manager</p>
+                            <a href="model-2-link" class="btn btn-outline-secondary">Try Me!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="../images/stickfigure.png">
+                        <div class="card-body">
+                            <h4 class="card-title">Model 3</h4>
+                            <p class="card-text">Data Scientist</p>
+                            <a href="model-3-link" class="btn btn-outline-secondary">Try Me!</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+            
     </body>
+
 </html>
