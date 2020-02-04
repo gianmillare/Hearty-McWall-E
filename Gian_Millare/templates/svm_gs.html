@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title>Random Forest McWall-E</title>
+        <title>SVM+GS McWall-E</title>
         
         <!-- Importing Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -36,7 +36,7 @@
         </nav>
 
         <div class="container" style="background: bisque;">
-            <h1>Random Forest Model</h1>
+            <h1>Support Vector Machine + GridSearch Model</h1>
         </div>
 
         <hr>
@@ -60,34 +60,40 @@
                         <hr>
 
                         <div class="autocomplete">
-                            <p>2) Do you identify as Male or Female?</p>
-                            <input id = "gender" type="text" class="search-field gender" placeholder="MALE / FEMALE" name="gender">
+                            <p>2) Female or Male?</p>
+                            <p>(Female = "1", Male = "2")</p>
+                            <input id = "gender" type="text" class="search-field gender" placeholder="FEMALE / MALE" name="gender">
                         </div>
 
                         <hr>
                         <div class="autocomplete">
-                            <p>3) What is your height?</p>
+                            <p>3) What is your height? (in centimeters)</p>
+                            
                             <input id = "height" type="text" class="search-field height" placeholder="HEIGHT" name="height">
                         </div>
 
                         <hr>
 
                         <div class="autocomplete">
-                            <p>4) What is your weight?</p>
+                            <p>4) What is your weight? (in kilograms)</p>
                             <input id = "weight" type="text" class="search-field weight" placeholder="WEIGHT" name="weight">
                         </div>
 
                         <hr>
 
                         <div class="autocomplete">
-                            <p>5) What is your Cholesterol level?</p>
+                            <p>5) What is your Cholesterol level (input actual number, i.e. "112")?</p>
+                            <p>Category 1 (normal) = &lt;200mg/dL</p>
+                            <p>Category 2 (high) = high = 200-239mg/dL</p>
+                            <p>Category 3 (abnormal) = abnormal = 240+</p>
                             <input id = "chol" type="text" class="search-field chol" placeholder="CHOLESTEROL" name="chol">
                         </div>
 
                         <hr>
 
                         <div class="autocomplete">
-                            <p>6) What is your Blood Pressure??</p>
+                            <p>6) What is your Blood Pressure?</p>
+                            <p>(Normal = &lt;120/&lt;80)</p>
                             <input id = "bp_hi" type="text" class="search-field bp_hi" placeholder="HIGH" name="bp_hi">
                             <input id = "bp_lo" type="text" class="search-field bp_lo" placeholder="LOW" name="bp_lo">
                         </div>
@@ -95,34 +101,42 @@
                         <hr>
 
                         <div class="autocomplete">
-                            <p>7) What is your Glucose level?</p>
+                            <p>7) What is your Glucose level (input actual number, i.e. "112")?</p>
+                            <p>Category 1 (normal) = &lt;100mg/dL</p>
+                            <p>Category 2 (high) = 100-125mg/dL</p>
+                            <p>Category 3 (very high) = 126+</p>
                             <input id = "glucose" type="text" class="search-field glucose" placeholder="GLUCOSE" name="glucose">
                         </div>
 
                         <hr>
 
                         <div class="autocomplete">
-                            <p>8) Do you smoke more than one cigarette a day?</p>
+                            <p>8) Do you smoke?</p>
+                            <p>(Yes = "1", No = "0")</p>
                             <input id = "smoke" type="text" class="search-field smoke" placeholder="SMOKE" name="smoke">
                         </div>
 
                         <hr>
 
                         <div class="autocomplete">
-                            <p>9) Do you drink more than the occasional glass of wine a day?</p>
+                            <p>9) Do you drink alcohol?</p>
+                            <p>(Yes = "1", No = "0")</p>
                             <input id = "alc" type="text" class="search-field alc" placeholder="ALCOHOL" name="alc">
                         </div>
 
                         <hr>
 
                         <div class="autocomplete">
-                            <p>10) Do you exercise at least 30 minutes a day?</p>
-                            <input id = "active" type="text" class="search-field active" placeholder="EXERCISE" name="active">
+                            <p>10) Are you active (on average) at least 30 minutes a day?</p>
+                            <p>(Yes = "1", No = "0")</p>
+                            <input id = "active" type="text" class="search-field active" placeholder="ACTIVE" name="active">
                         </div>
 
                         <hr>
 
-                        <button form="form1" class="search-btn" type="submit" onsubmit="buildPlot()">Calculate!</button>
+                        
+
+				        <button form="form1" class="search-btn" type="submit" onsubmit="buildPlot()">Calculate!</button>
 
                     </div>
                 </form>
