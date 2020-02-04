@@ -8,7 +8,6 @@
 
 body{
     font-family: "Georgia";
-    /* background-image: url(../images/bg1.jpg); */
 }
 
 nav{
@@ -104,31 +103,7 @@ a.active, a:hover{
     }
 }
 
-.jumbotron{
-    padding: 1rem;
-    border-radius: 15rem;
-    text-align: center;
-}
-
 .container  {
     padding: 25px 25px;
-}
-
-.col-lg-12 {
     text-align: center;
-    padding: 0%;
 }
-
-
-
-
-
-/* .btn-primary {
-    background-color: #6648b1;
-    border: 1px solid #6648b1;
-  }
-  
-  .btn-primary:hover {
-    background-color: #563d7c;
-    border: 1px solid #563d7c;
-  } */
