@@ -11,15 +11,15 @@ app.config["SECRET_KEY"] = "fInAlPrOjEcTs"
 def index():
     return render_template("index.html")
 
-@app.route("/index.html")
+@app.route("/index")
 def home():
     return render_template("index.html")
 
-@app.route("/about_us.html")
+@app.route("/about")
 def about():
     return render_template("about_us.html")
 
-@app.route("/deep_learning.html", methods=["GET", "POST"])
+@app.route("/deep", methods=["GET", "POST"])
 def deep_learning():
     if request.method == "POST":
         input_age = request.form["name"]
@@ -36,7 +36,7 @@ def deep_learning():
 
     return render_template("deep_learning.html")
 
-@app.route("/svm_gs.html", methods=["GET", "POST"])
+@app.route("/svm", methods=["GET", "POST"])
 def random_forest():
     if request.method == "POST":
         input_age = request.form["name"]
@@ -53,7 +53,7 @@ def random_forest():
         
     return render_template("svm_gs.html")
 
-@app.route("/logistic_regression.html", methods=["GET", "POST"])
+@app.route("/logreg", methods=["GET", "POST"])
 def log_regression():
     if request.method == "POST":
         input_age = request.form["name"]
