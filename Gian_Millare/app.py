@@ -11,11 +11,15 @@ app.config["SECRET_KEY"] = "fInAlPrOjEcTs"
 def index():
     return render_template("index.html")
 
-@app.route("/about")
+@app.route("/index.html")
+def home():
+    return render_template("index.html")
+
+@app.route("/about_us.html")
 def about():
     return render_template("about_us.html")
 
-@app.route("/deep", methods=["GET", "POST"])
+@app.route("/deep_learning.html", methods=["GET", "POST"])
 def deep_learning():
     if request.method == "POST":
         input_age = request.form["name"]
@@ -32,7 +36,7 @@ def deep_learning():
 
     return render_template("deep_learning.html")
 
-@app.route("/svm", methods=["GET", "POST"])
+@app.route("/svm_gs.html", methods=["GET", "POST"])
 def random_forest():
     if request.method == "POST":
         input_age = request.form["name"]
@@ -49,7 +53,7 @@ def random_forest():
         
     return render_template("svm_gs.html")
 
-@app.route("/logreg", methods=["GET", "POST"])
+@app.route("/logistic_regression.html", methods=["GET", "POST"])
 def log_regression():
     if request.method == "POST":
         input_age = request.form["name"]
@@ -64,7 +68,7 @@ def log_regression():
         alc = request.form["alc"]
         active = request.form["active"]
 
-    return render_template("logreg.html")
+    return render_template("logistic_regression.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
