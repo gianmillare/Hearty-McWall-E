@@ -68,6 +68,7 @@ def log_regression():
         alc = request.form["alc"]
         active = request.form["active"]
 
+
     return render_template("logistic_regression.html")
 
 if __name__ == "__main__":

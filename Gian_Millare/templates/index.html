@@ -27,23 +27,26 @@
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
             </label>
+            
             <label class="logo">Hearty McWall-E</label>
             <ul>
                 <li><a class="active" href="/index">Home</a></li>
-                <li><a href="/deep">Model 1</a></li>
-                <li><a href="/svm">Model 2</a></li>
-                <li><a href="/logreg">Model 3</a></li>
-                <li><a href="/about">About Us</a></li>
+                <li><a class="active" href="/deep">Deep Learning</a></li>
+                <li><a class="active" href="/svm">SVM</a></li>
+                <li><a class="active" href="/logreg">Logistic Regression</a></li>
+                <li><a class="active" href="/about">About Us</a></li>
             </ul>
         </nav>
 
-        <div class="jumbotron jumbotron-fluid" style="background: #aaa;">
+        <div class="jumbotron jumbotron-fluid" style="background: #D6EAF8;">
             <div class="container">
-                <h1>Welcome! My name is Hearty McWall-E. <img src="../static/images/robot1.jpg"></img></h1>
+                <h2>Welcome, Human! My name is Hearty McWall-E.</img></h2>
                 
                 <br>
             </div>
         </div>
+
+        <img class="sticky" src="../static/images/robot1.jpg" alt="Avatar">
 
         <hr>
 
@@ -58,18 +61,18 @@
                         <div class="card-body">
                             <h4 class="card-title">Model 1</h4>
                             <p class="card-text">Deep Learning Neural Network</p>
-                            <a href="model-1-link" class="btn btn-outline-secondary">Try Me!</a>
+                            <a href="/deep" class="btn btn-outline-secondary">Try Me!</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="card">
-                        <img class="card-img-top" src="../static/images/rf.jpg" width="200" height="350">
+                        <img class="card-img-top" src="../static/images/svm.jpg" width="200" height="350">
                         <div class="card-body">
                             <h4 class="card-title">Model 2</h4>
                             <p class="card-text">Support Vector Machine + GridSearch</p>
-                            <a href="model-2-link" class="btn btn-outline-secondary">Try Me!</a>
+                            <a href="/svm" class="btn btn-outline-secondary">Try Me!</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +83,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Model 3</h4>
                             <p class="card-text">Logistic Regression + GridSearch</p>
-                            <a href="model-3-link" class="btn btn-outline-secondary">Try Me!</a>
+                            <a href="/logreg" class="btn btn-outline-secondary">Try Me!</a>
                         </div>
                     </div>
                 </div>
@@ -100,7 +103,7 @@
                     <br>
                     <p>I was created by genius students of the UC Berkeley Data Analytics Bootcamp. My sole purpose
                     is to help you find out if you are at any health risks. My creators tested multiple machine learning 
-                    algorithms and models in order to find the most accurate models to help you. Choose any one of my three
+                    algorithms in order to find the most accurate models to help you. Choose one of my three
                     programmed models, input your answers, and find out if you're ready for that trip to the buffet
                     <i class="far fa-grimace"></i>... or a trip to the doctors <i class="far fa-grin-beam-sweat"></i>
                     </p>
@@ -117,7 +120,7 @@
 
         <!-- Portfolio  -->
 
-        <div class="container" style="background: bisque;">
+        <div class="container" style="background: #D6EAF8;">
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Meet my Creators!</h1>
@@ -166,6 +169,16 @@
         </div>
 
         <hr>
+        <br>
+
+        <div class="jumbotron jumbotron-fluid" style="background: #D6EAF8;">
+            <div class="container">
+                <h3>Want to learn more about this project? Click the link below.</h3>
+                <a href="/about" class="btn btn-outline-secondary">About Us</a>
+                
+                <br>
+            </div>
+        </div>
             
     </body>
 
