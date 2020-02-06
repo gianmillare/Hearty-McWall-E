@@ -72,11 +72,11 @@ def deep_learning():
         cate = []
         if age > 11:
             if cholesterol > 200:
-                value.append((cholesterol - 200)* 0.04)
+                value.append((cholesterol - 200)* 0.50976)
                 cate.append("cholesterol")
         if age < 11:
             if cholesterol > 170:
-                value.append((cholesterol - 170)* 0.04)
+                value.append((cholesterol - 170)* 0.50976)
                 cate.append("cholesterol")
         if gender == 1 :
             if height > 195 and weight > 92.5:
@@ -319,175 +319,175 @@ def random_forest():
         cate = []
         if age > 11:
             if cholesterol > 200:
-                value.append((cholesterol - 200)* 0.04)
+                value.append((cholesterol - 200)* 0.381)
                 cate.append("cholesterol")
         if age < 11:
             if cholesterol > 170:
-                value.append((cholesterol - 170)* 0.04)
+                value.append((cholesterol - 170)* 0.381)
                 cate.append("cholesterol")
         if gender == 1 :
             if height > 195 and weight > 92.5:
-                value.append((weight - 92.5)* 0.0185)
+                value.append((weight - 92.5)* 0.1866)
                 cate.append("weight")
             elif height > 193 and weight > 89.8:
-                value.append((weight - 89.8)* 0.0185)
+                value.append((weight - 89.8)* 0.1866)
                 cate.append("weight")
             elif height > 191 and weight > 87.5:
-                value.append((weight - 87.5)* 0.0185)
+                value.append((weight - 87.5)* 0.1866)
                 cate.append("weight")
             elif height > 188 and weight > 84.8:
-                value.append((weight - 84.8)* 0.0185)
+                value.append((weight - 84.8)* 0.1866)
                 cate.append("weight")
             elif height > 185 and weight > 82.5:
-                value.append((weight - 82.5)* 0.0185)
+                value.append((weight - 82.5)* 0.1866)
                 cate.append("weight")
             elif height > 183 and weight > 79.8:
-                value.append((weight - 79.8)* 0.0185)
+                value.append((weight - 79.8)* 0.1866)
                 cate.append("weight")
             elif height > 180 and weight > 77.5:
-                value.append((weight - 77.5)* 0.0185)
+                value.append((weight - 77.5)* 0.1866)
                 cate.append("weight")
             elif height > 178 and weight > 74.8:
-                value.append((weight - 74.8)* 0.0185)
+                value.append((weight - 74.8)* 0.1866)
                 cate.append("weight")
             elif height > 175 and weight > 72.6:
-                value.append((weight - 72.6)* 0.0185)
+                value.append((weight - 72.6)* 0.1866)
                 cate.append("weight")
             elif height > 173 and weight > 69.8:
-                value.append((weight - 69.8)* 0.0185)
+                value.append((weight - 69.8)* 0.1866)
                 cate.append("weight")
             elif height > 170 and weight > 67.6:
-                value.append((weight - 67.6)* 0.0185)
+                value.append((weight - 67.6)* 0.1866)
                 cate.append("weight")
             elif height > 168 and weight > 64.8:
-                value.append((weight - 64.8)* 0.0185)
+                value.append((weight - 64.8)* 0.1866)
                 cate.append("weight")
             elif height > 165 and weight > 62.6:
-                value.append((weight - 62.6)* 0.0185)
+                value.append((weight - 62.6)* 0.1866)
                 cate.append("weight")
             elif height > 163 and weight > 59.9:
-                value.append((weight - 59.9)* 0.0185)
+                value.append((weight - 59.9)* 0.1866)
                 cate.append("weight")
             elif height > 160 and weight > 57.6:
-                value.append((weight - 57.6)* 0.0185)
+                value.append((weight - 57.6)* 0.1866)
                 cate.append("weight")
             elif height > 157 and weight > 54.9:
-                value.append((weight - 54.9)* 0.0185)
+                value.append((weight - 54.9)* 0.1866)
                 cate.append("weight")
             elif height > 155 and weight > 52.6:
-                value.append((weight - 52.6)* 0.0185)
+                value.append((weight - 52.6)* 0.1866)
                 cate.append("weight")
             elif height > 152 and weight > 49.9:
-                value.append((weight - 49.9)* 0.0185)
+                value.append((weight - 49.9)* 0.1866)
                 cate.append("weight")
             elif height > 150 and weight > 47.6:
-                value.append((weight - 47.6)* 0.0185)
+                value.append((weight - 47.6)* 0.1866)
                 cate.append("weight")
             elif height > 147 and weight > 44.9:
-                value.append((weight - 44.9)* 0.0185)
+                value.append((weight - 44.9)* 0.1866)
                 cate.append("weight")
             elif height > 145 and weight > 42.6:
-                value.append((weight - 42.6)* 0.0185)
+                value.append((weight - 42.6)* 0.1866)
                 cate.append("weight")
             elif height > 142 and weight > 39.9:
-                value.append((weight - 39.9)* 0.0185)
+                value.append((weight - 39.9)* 0.1866)
                 cate.append("weight")
             elif height > 140 and weight > 37.6:
-                value.append((weight - 37.6)* 0.0185)
+                value.append((weight - 37.6)* 0.1866)
                 cate.append("weight")
             elif height <= 137 and weight > 34.9:
-                value.append((weight - 34.9)* 0.0185)
+                value.append((weight - 34.9)* 0.1866)
                 cate.append("weight")
         else:
             if height > 195 and weight > 103.8:
-                value.append((weight - 103.8)* 0.0185)
+                value.append((weight - 103.8)* 0.1866)
                 cate.append("weight")
             elif height > 193 and weight > 100.6:
-                value.append((weight - 100.6)* 0.0185)
+                value.append((weight - 100.6)* 0.1866)
                 cate.append("weight")
             elif height > 191 and weight > 98:
-                value.append((weight - 98)* 0.0185)
+                value.append((weight - 98)* 0.1866)
                 cate.append("weight")
             elif height > 188 and weight > 94.8:
-                value.append((weight - 94.8)* 0.0185)
+                value.append((weight - 94.8)* 0.1866)
                 cate.append("weight")
             elif height > 185 and weight > 91.6:
-                value.append((weight - 91.6)* 0.0185)
+                value.append((weight - 91.6)* 0.1866)
                 cate.append("weight")
             elif height > 183 and weight > 88.9:
-                value.append((weight - 88.9)* 0.0185)
+                value.append((weight - 88.9)* 0.1866)
                 cate.append("weight")
             elif height > 180 and weight > 85.7:
-                value.append((weight - 85.7)* 0.0185)
+                value.append((weight - 85.7)* 0.1866)
                 cate.append("weight")
             elif height > 178 and weight > 83:
-                value.append((weight - 83)* 0.0185)
+                value.append((weight - 83)* 0.1866)
                 cate.append("weight")
             elif height > 175 and weight > 79.8:
-                value.append((weight - 79.8)* 0.0185)
+                value.append((weight - 79.8)* 0.1866)
                 cate.append("weight")
             elif height > 173 and weight > 76.6:
-                value.append((weight - 76.6)* 0.0185)
+                value.append((weight - 76.6)* 0.1866)
                 cate.append("weight")
             elif height > 170 and weight > 73.9:
-                value.append((weight - 73.9)* 0.0185)
+                value.append((weight - 73.9)* 0.1866)
                 cate.append("weight")
             elif height > 168 and weight > 70.7:
-                value.append((weight - 70.7)* 0.0185)
+                value.append((weight - 70.7)* 0.1866)
                 cate.append("weight")
             elif height > 165 and weight > 68:
-                value.append((weight - 68)* 0.0185)
+                value.append((weight - 68)* 0.1866)
                 cate.append("weight")
             elif height > 163 and weight > 64.8:
-                value.append((weight - 64.8)* 0.0185)
+                value.append((weight - 64.8)* 0.1866)
                 cate.append("weight")
             elif height > 160 and weight > 61.6:
-                value.append((weight - 61.6)* 0.0185)
+                value.append((weight - 61.6)* 0.1866)
                 cate.append("weight")
             elif height > 157 and weight > 58.9:
-                value.append((weight - 58.9)* 0.0185)
+                value.append((weight - 58.9)* 0.1866)
                 cate.append("weight")
             elif height > 155 and weight > 55.8:
-                value.append((weight - 55.8)* 0.0185)
+                value.append((weight - 55.8)* 0.1866)
                 cate.append("weight")
             elif height > 152 and weight > 53:
-                value.append((weight - 53)* 0.0185)
+                value.append((weight - 53)* 0.1866)
                 cate.append("weight")
             elif height > 150 and weight > 49.9:
-                value.append((weight - 49.9)* 0.0185)
+                value.append((weight - 49.9)* 0.1866)
                 cate.append("weight")
             elif height > 147 and weight > 46.7:
-                value.append((weight - 46.7)* 0.0185)
+                value.append((weight - 46.7)* 0.1866)
                 cate.append("weight")
             elif height > 145 and weight > 43.9:
-                value.append((weight - 43.9)* 0.0185)
+                value.append((weight - 43.9)* 0.1866)
                 cate.append("weight")
             elif height > 142 and weight > 40.8:
-                value.append((weight - 40.8)* 0.0185)
+                value.append((weight - 40.8)* 0.1866)
                 cate.append("weight")
             elif height > 140 and weight > 38.1:
-                value.append((weight - 38.1)* 0.0185)
+                value.append((weight - 38.1)* 0.1866)
                 cate.append("weight")
             elif height <= 137 and weight > 34.9:
-                value.append((weight - 34.9)* 0.0185)
+                value.append((weight - 34.9)* 0.1866)
                 cate.append("weight")
         if bp_hi > 120:
-            value.append((bp_hi - 120)* 0.0328)
+            value.append((bp_hi - 120)* 7.6517)
             cate.append("BP")
         if bp_lo > 80:
-            value.append((bp_lo - 80)* 0.00036)
+            value.append((bp_lo - 80)* 0.0393)
             cate.append("BP")
         if glucose > 100:
-            value.append((glucose-100)* 0.1512)
+            value.append((glucose-100)* 0.041314)
             cate.append("glucose")
         if smoke == 1:
-            value.append(smoke * 0.0767)
+            value.append(smoke * 0.030607)
             cate.append("smoking")
         if alc == 1:
-            value.append(alc * 0.1069)
+            value.append(alc * 0.022789)
             cate.append("alcohol")
         if active == 0:
-            value.append(active * 0.3044)
+            value.append(active * 0.079956)
             cate.append("active")
         
     return render_template("svm_gs.html")
@@ -583,11 +583,11 @@ def log_regression():
         cate = []
         if age > 11:
             if cholesterol > 200:
-                value.append((cholesterol - 200)* 0.04)
+                value.append((cholesterol - 200)* 0.50976)
                 cate.append("cholesterol")
         if age < 11:
             if cholesterol > 170:
-                value.append((cholesterol - 170)* 0.04)
+                value.append((cholesterol - 170)* 0.50976)
                 cate.append("cholesterol")
         if gender == 1 :
             if height > 195 and weight > 92.5:
