@@ -9,6 +9,9 @@ import tensorflow as tf
 import keras
 from keras import models, layers
 import pickle
+from sklearn.metrics import classification_report
+from sklearn.svm import SVC 
+from sklearn.linear_model import LogisticRegression
 
 app = Flask(__name__)
 
@@ -493,9 +496,9 @@ def svm_stat():
         if value_list[z] > Y:
             Y = value_list[z]
             improve = cate_list[z]
-    user_in = np.array([user_in])
-    neural_network = pickle.load(open("svm_ss_gridsearch.pkl", "rb"))
-    heart = neural_network.predict(user_in)
+    # user_in = np.array(user_in)
+    svm = pickle.load(open("svm_ss_gridsearch.pkl", "rb"))
+    heart = svm.predict([user_in])
     predict = heart.tolist()
     prediction_dict = {
         "improvement": improve,
@@ -521,31 +524,52 @@ def log_regression():
         alc = int(request.form["alc"])
         active = int(request.form["active"])
 
-        input_list = []
-        input_list.append(age)
-        input_list.append(gender)
-        input_list.append(height)
-        input_list.append(weight)
-        input_list.append(bp_hi)
-        input_list.append(bp_lo)
+        # input_list = []
+        # input_list.append(age)
+        # input_list.append(gender)
+        # input_list.append(height)
+        # input_list.append(weight)
+        # input_list.append(bp_hi)
+        # input_list.append(bp_lo)
+        # if cholesterol > 240:
+        #     input_list.append(3)
+        # elif cholesterol > 200:
+        #     input_list.append(2)
+        # else:
+        #     input_list.append(1)
+        # if glucose > 126:
+        #     input_list.append(3)
+        # elif glucose > 100:
+        #     input_list.append(2)
+        # else:
+        #     input_list.append(1)
+        # input_list.append(smoke)
+        # input_list.append(alc)
+        # input_list.append(active)
+
+        # session["input_list"] = input_list
+
+        session["age"] = age
+        session["gender"] = gender
+        session["height"] = height
+        session["weight"] = weight
+        session["bp_hi"] = bp_hi
+        session["bp_lo"] = bp_lo
         if cholesterol > 240:
-            input_list.append(3)
+            session["cholesterol"] = 3
         elif cholesterol > 200:
-            input_list.append(2)
+            session["cholesterol"] = 2
         else:
-            input_list.append(1)
+            session["cholesterol"] = 1  
         if glucose > 126:
-            input_list.append(3)
+            session["glucose"] = 3
         elif glucose > 100:
-            input_list.append(2)
+            session["glucose"] = 2
         else:
-            input_list.append(1)
-        input_list.append(smoke)
-        input_list.append(alc)
-        input_list.append(active)
-
-        session["input_list"] = input_list
-
+            session["glucose"] = 1
+        session["smoke"] = smoke
+        session["alc"] = alc
+        session["active"] = active
 
         value = []
         cate = []
@@ -719,23 +743,51 @@ def log_regression():
             value.append(alc * 0.1069)
             cate.append("alcohol")
 
-    return render_template("logreg.html")
+    return render_template("logistic_regression.html")
 
 @app.route("/logstat")
 def log_stat():
     value_list = session.get("value")
     cate_list = session.get("cate")
-    user_in = session.get("input_list")
     Y = 0
     improve = 0
     for z in range(len(value_list)):
         if value_list[z] > Y:
             Y = value_list[z]
             improve = cate_list[z]
-    user_in = np.array([user_in])
-    neural_network = pickle.load(open("svm_ss_gridsearch.pkl", "rb"))
-    heart = neural_network.predict(user_in)
-    predict = heart.tolist()
+
+
+    Xage = session.get("age")
+    Xgender = session.get("gender")
+    Xheight = session.get("height")
+    Xweight = session.get("weight")
+    Xbph = session.get("bp_hi")
+    Xbpl = session.get("bp_lo")
+    Xchol = session.get("cholesterol")
+    Xgluc = session.get("glucose")
+    Xsmoke = session.get("smoke")
+    Xalc = session.get("alc")
+    Xactive = session.get("active")
+
+    X = []
+    X.append(Xage)
+    X.append(Xgender)
+    X.append(Xheight)
+    X.append(float(Xweight))
+    X.append(Xbph)
+    X.append(Xbpl)
+    X.append(Xchol)
+    X.append(Xgluc)
+    X.append(Xsmoke)
+    X.append(Xalc)
+    X.append(Xactive)
+
+    X = np.array(X)
+    # user_in = user_in.reshape(1,-1)
+    print(X)
+    log = pickle.load(open("logistical_regression_grid_search.pkl", "rb"))
+    heart = log.predict((X.reshape(1,-1)))
+    predict = heart[0]
     prediction_dict = {
         "improvement": improve,
         "prediction": predict
