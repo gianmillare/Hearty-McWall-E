@@ -11,6 +11,10 @@ app.config["SECRET_KEY"] = "fInAlPrOjEcTs"
 def index():
     return render_template("index.html")
 
+@app.route("/index")
+def home():
+    return render_template("index.html")
+
 @app.route("/about")
 def about():
     return render_template("about_us.html")
@@ -64,7 +68,8 @@ def log_regression():
         alc = request.form["alc"]
         active = request.form["active"]
 
-    return render_template("logreg.html")
+
+    return render_template("logistic_regression.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
