@@ -239,6 +239,9 @@ def deep_learning():
         if alc == 1:
             value.append(alc * 0.1069)
             cate.append("alcohol")
+        if active == 0:
+            value.append(active * 0.3044)
+            cate.append("active")
 
         session["input_list"] = input_list
         session["value"] = value
@@ -266,6 +269,7 @@ def deep_stat():
         "improvement": improve,
         "prediction": predict
     }
+    keras.backend.clear_session()
     return prediction_dict
 
 
@@ -482,6 +486,9 @@ def random_forest():
         if alc == 1:
             value.append(alc * 0.1069)
             cate.append("alcohol")
+        if active == 0:
+            value.append(active * 0.3044)
+            cate.append("active")
         
     return render_template("svm_gs.html")
 
@@ -504,6 +511,7 @@ def svm_stat():
         "improvement": improve,
         "prediction": predict
     }
+    keras.backend.clear_session()
     return prediction_dict
 
 
@@ -742,6 +750,9 @@ def log_regression():
         if alc == 1:
             value.append(alc * 0.1069)
             cate.append("alcohol")
+        if active == 0:
+            value.append(active * 0.3044)
+            cate.append("active")
 
     return render_template("logistic_regression.html")
 
@@ -784,7 +795,6 @@ def log_stat():
 
     X = np.array(X)
     # user_in = user_in.reshape(1,-1)
-    print(X)
     log = pickle.load(open("logistical_regression_grid_search.pkl", "rb"))
     heart = log.predict((X.reshape(1,-1)))
     predict = heart[0]
@@ -792,6 +802,7 @@ def log_stat():
         "improvement": improve,
         "prediction": predict
     }
+    keras.backend.clear_session()
     return prediction_dict
 
 if __name__ == "__main__":
