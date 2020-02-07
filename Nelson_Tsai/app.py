@@ -22,7 +22,7 @@ from sklearn import preprocessing
 
 app = Flask(__name__)
 
-app.config["SECRET_KEY"] = "fInAlPrOjEcTs"
+app.config["SECRET_KEY"] = "first"
 
 @app.route("/")
 def index():
@@ -259,6 +259,7 @@ def deep_learning():
 
 @app.route("/deepstat")
 def deep_stat():
+
     value_list = session.get("value")
     cate_list = session.get("cate")
     user_in = session.get("input_list")
@@ -502,6 +503,7 @@ def random_forest():
 
 @app.route("/svmstat")
 def svm_stat():
+
     value_list = session.get("value")
     cate_list = session.get("cate")
     user_in = session.get("input_list")
@@ -767,6 +769,7 @@ def log_regression():
 
 @app.route("/logstat")
 def log_stat():
+
     value_list = session.get("value")
     cate_list = session.get("cate")
     Y = 0
@@ -807,13 +810,14 @@ def log_stat():
     # user_in = user_in.reshape(1,-1)
     print(X)
     log = pickle.load(open("logistical_regression_grid_search.pkl", "rb"))
-    heart = log.predict_proba((X.reshape(1,-1)))
+    heart = log.predict((X.reshape(1,-1)))
+    keras.backend.clear_session()
     predict = heart
     prediction_dict = {
         "improvement": improve,
         "prediction": predict
     }
-    keras.backend.clear_session()
+
     return prediction_dict
 
 if __name__ == "__main__":

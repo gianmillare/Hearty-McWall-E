@@ -7,10 +7,10 @@ function animation() {
 
         var canvasR = document.getElementById("result");
         if (data["prediction"][0][0]>data["prediction"][0][1]){
-            canvasR.textContent += parseFloat(data["prediction"][0][0]).toFixed(2)+"%" + " probability of being healthy!"
+            canvasR.textContent += parseFloat((data["prediction"][0][0])*100).toFixed(2)+"%" + " probability of being healthy!"
             gsap.to("#healthy", {autoAlpha:1, visibility: "visible", duration:1});
         } else {
-            canvasR.textContent += parseFloat(data["prediction"][0][1]).toFixed(2)+"%" + "probability of cardiovascular issues. Consult your Doctor."
+            canvasR.textContent += parseFloat((data["prediction"][0][1])*100).toFixed(2)+"%" + "probability of cardiovascular issues. Consult your Doctor."
             gsap.to("#doctor", {autoAlpha:1, visibility: "visible", duration:1});
         };
 
