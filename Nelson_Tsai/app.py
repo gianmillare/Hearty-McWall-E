@@ -12,6 +12,13 @@ import pickle
 from sklearn.metrics import classification_report
 from sklearn.svm import SVC 
 from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler as ss
+from sklearn import preprocessing
 
 app = Flask(__name__)
 
@@ -257,10 +264,11 @@ def deep_stat():
     user_in = session.get("input_list")
     Y = 0
     improve = 0
-    for z in range(len(value_list)):
-        if value_list[z] > Y:
-            Y = value_list[z]
-            improve = cate_list[z]
+    if value_list is not None:
+        for z in range(len(value_list)):
+            if value_list[z] > Y:
+                Y = value_list[z]
+                improve = cate_list[z]
     user_in = np.array([user_in])
     neural_network = load_model("neural_network3.h5", compile=False)
     heart = neural_network.predict(user_in)
@@ -499,10 +507,11 @@ def svm_stat():
     user_in = session.get("input_list")
     Y = 0
     improve = 0
-    for z in range(len(value_list)):
-        if value_list[z] > Y:
-            Y = value_list[z]
-            improve = cate_list[z]
+    if value_list is not None:
+        for z in range(len(value_list)):
+            if value_list[z] > Y:
+                Y = value_list[z]
+                improve = cate_list[z]
     # user_in = np.array(user_in)
     svm = pickle.load(open("svm_ss_gridsearch.pkl", "rb"))
     heart = svm.predict([user_in])
@@ -762,10 +771,11 @@ def log_stat():
     cate_list = session.get("cate")
     Y = 0
     improve = 0
-    for z in range(len(value_list)):
-        if value_list[z] > Y:
-            Y = value_list[z]
-            improve = cate_list[z]
+    if value_list is not None:
+        for z in range(len(value_list)):
+            if value_list[z] > Y:
+                Y = value_list[z]
+                improve = cate_list[z]
 
 
     Xage = session.get("age")
@@ -784,7 +794,7 @@ def log_stat():
     X.append(Xage)
     X.append(Xgender)
     X.append(Xheight)
-    X.append(float(Xweight))
+    X.append(Xweight)
     X.append(Xbph)
     X.append(Xbpl)
     X.append(Xchol)
@@ -795,9 +805,10 @@ def log_stat():
 
     X = np.array(X)
     # user_in = user_in.reshape(1,-1)
+    print(X)
     log = pickle.load(open("logistical_regression_grid_search.pkl", "rb"))
-    heart = log.predict((X.reshape(1,-1)))
-    predict = heart[0]
+    heart = log.predict_proba((X.reshape(1,-1)))
+    predict = heart
     prediction_dict = {
         "improvement": improve,
         "prediction": predict

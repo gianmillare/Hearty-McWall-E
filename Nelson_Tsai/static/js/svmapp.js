@@ -6,11 +6,11 @@ function animation() {
         };
 
         var canvasR = document.getElementById("result");
-        if (data["prediction"][0][0]>data["prediction"][0][1]){
-            canvasR.textContent += parseFloat(data["prediction"][0][0]).toFixed(2)+"%" + " probability of being healthy!"
+        if (data["prediction"][0] == 0){
+            canvasR.textContent +=  "You are Healthy!"
             gsap.to("#healthy", {autoAlpha:1, visibility: "visible", duration:1});
-        } else {
-            canvasR.textContent += parseFloat(data["prediction"][0][1]).toFixed(2)+"%" + "probability of cardiovascular issues. Consult your Doctor."
+        } else if (data["prediction"][0] == 1){
+            canvasR.textContent +=  "Consult your Doctor, there may be some issues."
             gsap.to("#doctor", {autoAlpha:1, visibility: "visible", duration:1});
         };
 
